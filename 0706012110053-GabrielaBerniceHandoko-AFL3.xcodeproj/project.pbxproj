@@ -11,6 +11,7 @@
 		04F6AC9829E4F14C0015A61F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6AC9729E4F14C0015A61F /* ContentView.swift */; };
 		04F6AC9A29E4F14D0015A61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F6AC9929E4F14D0015A61F /* Assets.xcassets */; };
 		04F6AC9D29E4F14D0015A61F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F6AC9C29E4F14D0015A61F /* Preview Assets.xcassets */; };
+		04F6ACA429E4F72C0015A61F /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6ACA329E4F72C0015A61F /* CircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		04F6AC9729E4F14C0015A61F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04F6AC9929E4F14D0015A61F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04F6AC9C29E4F14D0015A61F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04F6ACA329E4F72C0015A61F /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				04F6AC9529E4F14C0015A61F /* _706012110053_GabrielaBerniceHandoko_AFL3App.swift */,
 				04F6AC9729E4F14C0015A61F /* ContentView.swift */,
+				04F6ACA329E4F72C0015A61F /* CircleImage.swift */,
 				04F6AC9929E4F14D0015A61F /* Assets.xcassets */,
 				04F6AC9B29E4F14D0015A61F /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				04F6AC9829E4F14C0015A61F /* ContentView.swift in Sources */,
 				04F6AC9629E4F14C0015A61F /* _706012110053_GabrielaBerniceHandoko_AFL3App.swift in Sources */,
+				04F6ACA429E4F72C0015A61F /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
