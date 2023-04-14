@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct _706012110053_GabrielaBerniceHandoko_AFL3App: App {
+struct LandmarksApp: App {
+    @StateObject private var modelData = ModelData()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(modelData)
         }
     }
 }
