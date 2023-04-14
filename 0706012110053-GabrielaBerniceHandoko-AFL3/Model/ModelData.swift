@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+// to load the data of landmark and hike
 final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
     var hikes: [Hike] = load("hikeData.json")

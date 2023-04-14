@@ -10,6 +10,7 @@ import SwiftUI
 struct LandmarkRow: View {
     var landmark: Landmark
 
+    // to make show the landmark image, resize it and give the name
     var body: some View {
         HStack {
             landmark.image
@@ -20,6 +21,7 @@ struct LandmarkRow: View {
 
             Spacer()
 
+            // it it is favorite, then the star will be filled with yellow color
             if landmark.isFavorite {
                 Image(systemName: "star.fill")
                     .imageScale(.medium)
@@ -29,6 +31,7 @@ struct LandmarkRow: View {
     }
 }
 
+// to show the preview of landmark row
 struct LandmarkRow_Previews: PreviewProvider {
     static var landmarks = ModelData().landmarks
 

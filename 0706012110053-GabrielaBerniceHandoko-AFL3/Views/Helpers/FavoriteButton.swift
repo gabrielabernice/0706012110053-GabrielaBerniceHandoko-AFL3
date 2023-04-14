@@ -10,6 +10,7 @@ import SwiftUI
 struct FavoriteButton: View {
     @Binding var isSet: Bool
     
+    // if it is favorite, therefore the star will be yellow, if not then it will be grey colored
     var body: some View {
         Button{
             isSet.toggle()
@@ -21,6 +22,7 @@ struct FavoriteButton: View {
     }
 }
 
+// to show preview of the favorite button
 struct FavoriteButton_Previews: PreviewProvider {
     static var previews: some View {
         FavoriteButton(isSet: .constant(true))

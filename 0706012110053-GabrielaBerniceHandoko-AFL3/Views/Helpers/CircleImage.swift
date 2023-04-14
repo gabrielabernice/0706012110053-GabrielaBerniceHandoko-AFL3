@@ -11,6 +11,7 @@ struct CircleImage: View {
     var image: Image
     
     var body: some View {
+        // making the shape into circle and give stroke and shadow in it
         image
             .clipShape(Circle())
             .overlay{
@@ -20,6 +21,7 @@ struct CircleImage: View {
     }
 }
 
+// giving the image as tutlerock
 struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
         CircleImage(image: Image("turtlerock"))

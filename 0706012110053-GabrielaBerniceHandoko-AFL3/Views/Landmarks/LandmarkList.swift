@@ -17,6 +17,7 @@ struct LandmarkList: View {
         }
     }
 
+    // to show the favorites only
     var body: some View {
         NavigationView {
             List {
@@ -37,6 +38,7 @@ struct LandmarkList: View {
     }
 }
 
+// to show preview of landmark list
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
         LandmarkList()

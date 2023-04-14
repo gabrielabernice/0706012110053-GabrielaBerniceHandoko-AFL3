@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+// to make the badge rotated
 struct RotatedBadgeSymbol: View {
     let angle: Angle
     
