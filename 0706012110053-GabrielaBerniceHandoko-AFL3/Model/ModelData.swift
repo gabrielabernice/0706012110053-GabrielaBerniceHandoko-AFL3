@@ -13,6 +13,11 @@ final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
     var hikes: [Hike] = load("hikeData.json")
     
+    // to show only featured landmarks to be shown
+    var features: [Landmark]{
+        landmarks.filter{$0.isFeatured}
+    }
+    
     // add categories in the form of dictionary, category names as key
     var categories: [String: [Landmark]]{
         Dictionary(
