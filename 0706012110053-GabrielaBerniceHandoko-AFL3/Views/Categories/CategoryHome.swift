@@ -16,12 +16,8 @@ struct CategoryHome: View {
         NavigationView{
             // caling the categories name in the form of list
             List{
-                // adding the image of the first featured landmark
-                modelData.features[0].image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
-                    .clipped()
+                PageView(pages: modelData.features.map { FeatureCard(landmark: $0) })
+                    .aspectRatio(3 / 2, contentMode: .fit)
                     .listRowInsets(EdgeInsets())
                 
                 ForEach(modelData.categories.keys.sorted(), id: \.self){key in

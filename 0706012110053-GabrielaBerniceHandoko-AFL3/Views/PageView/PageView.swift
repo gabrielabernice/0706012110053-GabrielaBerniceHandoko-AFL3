@@ -9,10 +9,17 @@ import SwiftUI
 
 struct PageView<Page: View>: View {
     var pages: [Page]
+    @State private var currentPage = 0
     
     var body: some View {
-        // create custom view to present ui view controller representable view
-        PageViewController(pages: pages)
+        ZStack(alignment: .bottomTrailing) {
+            // create custom view to present ui view controller representable view
+            PageViewController(pages: pages, currentPage: $currentPage)
+            // to show the correct value of the number of pages
+            PageControl(numberOfPages: pages.count, currentPage: $currentPage)
+                .frame(width: CGFloat(pages.count * 18))
+                .padding(.trailing)
+        }
     }
 }
 

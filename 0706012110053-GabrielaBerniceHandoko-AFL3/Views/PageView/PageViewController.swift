@@ -10,6 +10,7 @@ import UIKit
 
 struct PageViewController<Page: View>: UIViewControllerRepresentable{
     var pages: [Page]
+    @Binding var currentPage: Int
     
     // calls this function to have access to the coordinator object
     func makeCoordinator() -> Coordinator {
@@ -24,6 +25,8 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable{
             navigationOrientation: .horizontal)
         // as the data source
         pageViewController.dataSource = context.coordinator
+        // showing the correct page number whenever the user is swiping
+        pageViewController.delegate = context.coordinator
         
         return pageViewController
     }
@@ -32,11 +35,11 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable{
     // host the page swiftui view every update
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
         pageViewController.setViewControllers(
-            [context.coordinator.controllers[0]], direction: .forward, animated: true)
+            [context.coordinator.controllers[currentPage]], direction: .forward, animated: true)
     }
     
     // nested coordinator class
-    class Coordinator: NSObject, UIPageViewControllerDataSource{
+    class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate{
         var parent: PageViewController
         
         // it is initialized here because the system only initializes once
@@ -73,6 +76,18 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable{
                 return controllers.first
             }
             return controllers[index + 1]
+        }
+        
+        func pageViewController(
+            _ pageViewController: UIPageViewController,
+            didFinishAnimating finished: Bool,
+            previousViewControllers: [UIViewController],
+        transitionCompleted completed: Bool){
+            if completed,
+               let visibleViewController = pageViewController.viewControllers?.first,
+               let index = controllers.firstIndex(of: visibleViewController){
+                parent.currentPage = index
+            }
         }
     }
 }
