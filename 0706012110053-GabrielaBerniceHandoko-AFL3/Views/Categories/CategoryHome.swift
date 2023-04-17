@@ -10,6 +10,7 @@ import SwiftUI
 struct CategoryHome: View {
     // to access category
     @EnvironmentObject var modelData: ModelData
+    @State private var showingProfile = false
     
     var body: some View {
         NavigationView{
@@ -31,6 +32,19 @@ struct CategoryHome: View {
                 .listRowInsets(EdgeInsets())
             }
             .navigationTitle("Featured")
+            
+            // to show toolbar in the upper part as a button, and directing it to showing profile in the form of toggle
+            .toolbar {
+                Button {
+                    showingProfile.toggle()
+                } label: {
+                    Label("User Profile", systemImage: "person.crop.circle")
+                }
+            }
+            .sheet(isPresented: $showingProfile) {
+                ProfileHost()
+                    .environmentObject(modelData)
+            }
         }
     }
 }

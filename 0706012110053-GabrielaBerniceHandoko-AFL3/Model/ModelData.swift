@@ -13,6 +13,9 @@ final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
     var hikes: [Hike] = load("hikeData.json")
     
+    // include an instance of user profile that persists even after user dismisses the profile view
+    @Published var profile = Profile.default
+    
     // to show only featured landmarks to be shown
     var features: [Landmark]{
         landmarks.filter{$0.isFeatured}
