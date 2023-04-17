@@ -11,23 +11,40 @@ struct ProfileHost: View {
     @Environment(\.editMode) var editMode
     @EnvironmentObject var modelData: ModelData
     @State private var draftProfile = Profile.default
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20){
             HStack{
+                
+                // adding the cancel button, to cancel the edit the profile data
+                if editMode?.wrappedValue == .active{
+                    Button("Cancel", role: .cancel){
+                        draftProfile = modelData.profile
+                        editMode?.animation().wrappedValue = .inactive
+                    }
+                }
+                
                 Spacer()
                 
                 // toggles edit mode on and off
                 EditButton()
             }
             
-            // conditional, if on edit mode, then there will be text "profile editor"
+            // conditional, if on edit mode, then there will be showing the profile editor
             if editMode?.wrappedValue == .inactive{
                 // read the data from environment, then passed the data to profile host
                 ProfileSummary(profie: modelData.profile)
             }
             else{
-                Text("Profile Editor")
+                ProfileEditor(profile: $draftProfile)
+                
+                // it is used to change the profile data to a new data, so the new data will be changed when the user click on the done button
+                    .onAppear{
+                        draftProfile = modelData.profile
+                    }
+                    .onDisappear{
+                        modelData.profile = draftProfile
+                    }
             }
         }
         .padding()
