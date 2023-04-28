@@ -11,7 +11,7 @@ struct LandmarkSettings: View {
     @AppStorage("MapView.zoom")
     private var zoom: MapView.Zoom = .medium
     
-    
+    // to let the map set as medium
     var body: some View {
         Form {
             Picker("Map Zoom:", selection: $zoom) {

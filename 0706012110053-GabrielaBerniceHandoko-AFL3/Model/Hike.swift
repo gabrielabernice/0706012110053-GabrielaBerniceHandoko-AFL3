@@ -7,6 +7,7 @@
 
 import Foundation
 
+// to show the data of the name, distance, difficulty, and observation
 struct Hike: Codable, Hashable, Identifiable {
     var id: Int
     var name: String
@@ -21,6 +22,7 @@ struct Hike: Codable, Hashable, Identifiable {
             .string(fromValue: distance, unit: .kilometer)
     }
 
+    // the categories of the graph
     struct Observation: Codable, Hashable {
         var distanceFromStart: Double
 

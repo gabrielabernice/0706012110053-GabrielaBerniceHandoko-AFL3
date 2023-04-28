@@ -12,6 +12,7 @@ struct LandmarkDetail: View {
     @EnvironmentObject var modelData: ModelData
     var landmark: Landmark
     
+    // to show the data from index 0
     var landmarkIndex: Int {
         modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }
@@ -19,10 +20,12 @@ struct LandmarkDetail: View {
     var body: some View {
         ScrollView {
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
+                // to show the coordinate of the landmark
                 MapView(coordinate: landmark.locationCoordinate)
                     .ignoresSafeArea(edges: .top)
                     .frame(height: 300)
                 
+                // to let it open the maps
                 Button("Open in Maps") {
                     let destination = MKMapItem(placemark: MKPlacemark(coordinate: landmark.locationCoordinate))
                     destination.name = landmark.name
@@ -31,6 +34,7 @@ struct LandmarkDetail: View {
                 .padding()
             }
             
+            // showing the image, landmark name, star if it is a favorite, and also the park name, and description
             VStack(alignment: .leading, spacing: 20) {
                 HStack(spacing: 24) {
                     CircleImage(image: landmark.image.resizable())

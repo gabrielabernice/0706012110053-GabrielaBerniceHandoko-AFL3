@@ -15,7 +15,7 @@ struct LandmarkDetail: View {
         modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }
 
-    // to show the map at the top, image, name, desc
+    // to show the map at the top, image, name, desc of the landmarks
     var body: some View {
         ScrollView {
             MapView(coordinate: landmark.locationCoordinate)

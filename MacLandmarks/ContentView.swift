@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// to show the landmark list
 struct ContentView: View {
     var body: some View {
         LandmarkList()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// to make the badge
+// to make the badge, to combine the symbol and the background
 struct Badge: View {
     var badgeSymbols: some View {
         ForEach(0..<8) { index in

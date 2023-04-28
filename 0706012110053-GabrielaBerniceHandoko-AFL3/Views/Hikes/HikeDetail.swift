@@ -17,6 +17,7 @@ struct HikeDetail: View {
         ("Pace", \Hike.Observation.pace)
     ]
 
+    // to put on the graph and also the text to show which graph is being shown
     var body: some View {
         VStack {
             HikeGraph(hike: hike, path: dataToShow)

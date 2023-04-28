@@ -14,6 +14,7 @@ struct MapView: View {
     @AppStorage("MapView.zoom")
     private var zoom: Zoom = .medium
 
+    // to make the setting preferences
     enum Zoom: String, CaseIterable, Identifiable {
         case near = "Near"
         case medium = "Medium"
@@ -24,6 +25,7 @@ struct MapView: View {
         }
     }
 
+    // if the setting is near, then the scale of the map will be 0.02, and so medium and far
     var delta: CLLocationDegrees {
         switch zoom {
         case .near: return 0.02
@@ -36,6 +38,7 @@ struct MapView: View {
         Map(coordinateRegion: .constant(region))
     }
 
+    // showing the coordinate of the landmark
     var region: MKCoordinateRegion {
         MKCoordinateRegion(
             center: coordinate,

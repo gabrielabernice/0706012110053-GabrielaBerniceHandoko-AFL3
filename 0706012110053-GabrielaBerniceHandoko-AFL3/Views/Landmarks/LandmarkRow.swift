@@ -10,6 +10,7 @@ import SwiftUI
 struct LandmarkRow: View {
     var landmark: Landmark
     
+    // to make the list of the landmarks, that is showing the name, the park, and a star if it is a favorite
     var body: some View {
         HStack {
             landmark.image

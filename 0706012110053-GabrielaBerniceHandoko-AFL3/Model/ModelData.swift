@@ -30,6 +30,7 @@ final class ModelData: ObservableObject {
     }
 }
 
+// if the data cannot be loaded
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
     

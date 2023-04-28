@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-// making the colour of background
-
+// making the colour of background, and also making the shape of the badge
 struct BadgeBackground: View {
     var body: some View {
         GeometryReader { geometry in

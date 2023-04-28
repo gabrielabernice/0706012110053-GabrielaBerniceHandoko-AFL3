@@ -7,6 +7,7 @@ A view displaying information about a hike, including an elevation graph.
 
 import SwiftUI
 
+// to make the transition
 extension AnyTransition{
     static var moveAndFade: AnyTransition{
         .asymmetric(
@@ -19,6 +20,7 @@ struct HikeView: View {
     var hike: Hike
     @State private var showDetail = false
 
+    // to make the view of the graph, with the name and the distance, with the graph that is being shown when the icon is being pressed
     var body: some View {
         VStack {
             HStack {
@@ -47,6 +49,7 @@ struct HikeView: View {
                 }
             }
 
+            // if the detail is being pressed, then it will show the detail with the transition that is already being made above
             if showDetail {
                 HikeDetail(hike: hike)
                     .transition(.moveAndFade)

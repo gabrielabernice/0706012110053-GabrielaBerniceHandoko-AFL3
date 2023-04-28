@@ -18,6 +18,7 @@ struct PageControl: UIViewRepresentable{
         Coordinator(self)
     }
     
+    // to get the page numbers
     func makeUIView(context: Context) -> UIPageControl {
         let control = UIPageControl()
         control.numberOfPages = numberOfPages
@@ -31,6 +32,7 @@ struct PageControl: UIViewRepresentable{
         return control
     }
     
+    // to update the page
     func updateUIView(_ uiView: UIPageControl, context: Context) {
         uiView.currentPage = currentPage
     }

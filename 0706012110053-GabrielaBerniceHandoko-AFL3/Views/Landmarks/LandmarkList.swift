@@ -22,12 +22,14 @@ struct LandmarkList: View {
         var id: FilterCategory { self }
     }
     
+    // to make a filter if it is favorite, showing all, or showing based on each categories
     var filteredLandmarks: [Landmark] {
         modelData.landmarks.filter { landmark in
             (!showFavoritesOnly || landmark.isFavorite) && (filter == .all || filter.rawValue == landmark.category.rawValue)
         }
     }
     
+    // to show the title of the filters on top left, it will show landmarks if it filters all, it will show each category's name if each category is being filtered
     var title: String {
         let title = filter == .all ? "Landmarks" : filter.rawValue
         return showFavoritesOnly ? "Favorite \(title)" : title
@@ -38,7 +40,7 @@ struct LandmarkList: View {
     }
     
     
-    // to show the favorites only
+    // to show the favorites only or each category
     var body: some View {
         NavigationView {
             List(selection: $selectedLandmark) {

@@ -20,6 +20,7 @@ struct HikeGraph: View {
     var hike: Hike
     var path: KeyPath<Hike.Observation, Range<Double>>
 
+    // to set the color of each graph based on the graph that is selected
     var color: Color {
         switch path {
         case \.elevation:
@@ -39,6 +40,7 @@ struct HikeGraph: View {
         let maxMagnitude = data.map { magnitude(of: $0[keyPath: path]) }.max()!
         let heightRatio = 1 - CGFloat(maxMagnitude / magnitude(of: overallRange))
 
+        // to set the graph
         return GeometryReader { proxy in
             HStack(alignment: .bottom, spacing: proxy.size.width / 120) {
                 ForEach(Array(data.enumerated()), id: \.offset) { index, observation in
@@ -58,6 +60,7 @@ struct HikeGraph: View {
     }
 }
 
+// to set the range of the graph
 func rangeOfRanges<C: Collection>(_ ranges: C) -> Range<Double>
     where C.Element == Range<Double> {
     guard !ranges.isEmpty else { return 0..<0 }

@@ -18,6 +18,7 @@ struct ContentView: View {
     }
 
     var body: some View {
+        // to make two tabs below the screen
         TabView(selection: $selection) {
             CategoryHome()
                 .tabItem {

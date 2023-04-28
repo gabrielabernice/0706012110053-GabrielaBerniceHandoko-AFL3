@@ -7,6 +7,7 @@ A single line in the graph.
 
 import SwiftUI
 
+// file from the download, to make the capsule shape
 struct GraphCapsule: View, Equatable {
     var index: Int
     var color: Color

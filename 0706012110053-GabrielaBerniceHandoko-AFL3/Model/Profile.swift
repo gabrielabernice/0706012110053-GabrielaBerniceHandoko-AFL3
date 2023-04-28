@@ -13,8 +13,10 @@ struct Profile {
     var seasonalPhoto = Season.winter
     var goalDate = Date()
 
+    // to set the default user
     static let `default` = Profile(username: "gebiikim")
 
+    // to set the different kind of season
     enum Season: String, CaseIterable, Identifiable {
         case spring = "🌷"
         case summer = "🌞"
